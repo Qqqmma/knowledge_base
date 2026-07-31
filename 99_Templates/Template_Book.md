@@ -11,6 +11,8 @@ year:
 ---
 
 # <% tp.file.title %>
+> [!quote] Главная мысль или цитата
+> 
 
 > [!info] О книге
 > **Автор:** `=this.author`
