@@ -1,0 +1,136 @@
+.chess-board-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: var(--chess-board-max-width, 320px);
+}
+
+.chess-pgn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin: 0 auto;
+  max-width: var(--chess-board-max-width, 320px);
+  outline: none;
+}
+
+.chess-pgn-container:focus-visible {
+  outline: 2px solid var(--interactive-accent);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.chess-pgn-board {
+  width: 100%;
+}
+
+.chess-pgn-move-info {
+  font-family: var(--font-text);
+  font-size: 14px;
+  color: var(--text-normal);
+  text-align: center;
+  min-height: 20px;
+}
+
+.chess-pgn-controls {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.chess-pgn-btn {
+  padding: 8px 16px;
+  min-width: 44px;
+  min-height: 44px;
+  font-size: 16px;
+  font-family: var(--font-text);
+  background-color: var(--interactive-normal);
+  color: var(--text-normal);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: background-color 0.1s ease;
+}
+
+.chess-pgn-btn:hover:not(:disabled) {
+  background-color: var(--interactive-hover);
+}
+
+.chess-pgn-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.chess-error {
+  color: red;
+}
+
+.chess-move-row {
+  display: grid;
+  grid-template-columns: 2.2em 1fr 1fr;
+  gap: 2px 6px;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.chess-move-num {
+  color: var(--text-faint);
+  text-align: right;
+}
+
+.chess-move-btn {
+  margin: 0;
+  padding: 2px 4px;
+  border: none;
+  border-radius: 3px;
+  background: transparent;
+  font-family: var(--font-monospace);
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+  touch-action: manipulation;
+  color: var(--text-muted);
+}
+
+.chess-move-btn-past {
+  color: var(--text-normal);
+}
+
+.chess-move-btn-current {
+  background-color: var(--background-modifier-hover);
+  color: var(--text-accent);
+  font-weight: 600;
+}
+
+.chess-pgn-container--in-panel {
+  margin: 0;
+}
+
+.chess-pgn-with-movelist {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--chess-movelist-gap, 12px);
+  max-width: min(100%, var(--chess-pgn-with-movelist-max-width, 572px));
+  margin: 0 auto;
+}
+
+.chess-move-list {
+  font-family: var(--font-text);
+  font-size: 13px;
+  min-width: 220px;
+  width: min(240px, 100%);
+  flex: 1 1 220px;
+  max-height: var(--chess-board-max-width, 320px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 4px 6px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  color: var(--text-normal);
+}
